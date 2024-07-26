@@ -1,4 +1,24 @@
-Plese feel free to post your code here. Again, this is not grading item.
+# For instructor
+
+## Workflow
+
+1. Create the teacher notebook with answers
+  - Add tag "answer" for the cells with the assignment answers
+  - Add tag "non-gradable" for the cells that are *not* gradable
+  - Add tag "gradable" for the cells that are gradable
+2. Generate the student version and the encrypted teacher's notebook
+  - Run the `to_student_version.sh` script by
+  - `bash to_student_version.sh assignment_teacher.ipynb ../assignment/assignment.ipynb mypassword`
+  - Change the password to something more secure
+3. Add the encrypted teacher's notebook to the repository
+  - `git add ../assignment/assignment_teacher.ipynb.enc & git commit -m "Update assignment" & git push`
+4. Set up the auto-grader
+  - Open an assignment in Github Classroom
+  - Copy & Paste `classroom.yml` and modify it to fit the assignment
+5. Make sure the auto-grader works
+  - Play the student role by yourself by accepting the assignment
+  - Check the auto-grader by yourself by submitting the assignment
+6. Distribute the assignment to students
 
 ## How to use to_student_version.sh
 
@@ -18,5 +38,5 @@ Run the script with the following command:
 
   Example:
   ```bash
-  bash to_student_version.sh assignment_teacher.ipynb ../assignment/assignment.ipynb mypassword 
+  bash to_student_version.sh assignment_teacher.ipynb ../assignment/assignment.ipynb mypassword
   ```
