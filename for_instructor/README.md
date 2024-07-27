@@ -26,7 +26,7 @@
   - [ ] Check the auto-grader by yourself by submitting the assignment
 - [ ] Distribute the assignment to students
 
-# Check list
+## Check list
 
 - [ ] Upload
   - [ ] The `assignment/assignment.ipynb` is uploaded to the repository
