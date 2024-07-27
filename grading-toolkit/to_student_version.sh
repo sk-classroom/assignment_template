@@ -18,9 +18,11 @@ jupytext $teacher_notebook --to py
 
 sed -e 's/^# \+$/# + tags=["non-grading-item"]/' $teacher_notebook_py > $teacher_notebook_py_tagged
 
-jupytext $teacher_notebook_py_tagged --to ipynb
-echo $teacher_notebook_py_tagged
-jupyter nbconvert --to notebook --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='["answer"]' $teacher_notebook_ipynb_tagged  --output $student_notebook
+jupytext $teacher_notebook_py_tagged --to ipynb --output $teacher_notebook_ipynb_tagged
+echo $student_notebook
+jupyter nbconvert --to notebook --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='["answer"]' $teacher_notebook_ipynb_tagged  --inplace
 
-rm $teacher_notebook_py $teacher_notebook_py_tagged $teacher_notebook_ipynb_tagged
+mv $teacher_notebook_ipynb_tagged $student_notebook
+
+rm $teacher_notebook_py $teacher_notebook_py_tagged
 

@@ -4,11 +4,10 @@
 
 1. Create the teacher notebook with answers
   - Add tag "answer" for the cells with the assignment answers
-  - Add tag "non-gradable" for the cells that are *not* gradable
   - Add tag "gradable" for the cells that are gradable
 2. Generate the student version and the encrypted teacher's notebook
   - Run the `to_student_version.sh` script by
-  - `bash to_student_version.sh assignment_teacher.ipynb ../assignment/assignment.ipynb mypassword`
+  - `bash grading-toolkit/to_student_version.sh assignment_teacher.ipynb ../assignment/assignment.ipynb mypassword`
   - Change the password to something more secure
 3. Add the encrypted teacher's notebook to the repository
   - `git add ../assignment/assignment_teacher.ipynb.enc & git commit -m "Update assignment" & git push`
