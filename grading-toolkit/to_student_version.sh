@@ -16,7 +16,7 @@ openssl enc -aes256 -in $teacher_notebook -out $teacher_notebook_enc -pass pass:
 
 jupytext $teacher_notebook --to py
 
-sed -e 's/^# \+$/# + tags=["non-grading-item"]/' $teacher_notebook_py > $teacher_notebook_py_tagged
+#sed -e 's/^# \+$/# + tags=["non-grading-item"]/' $teacher_notebook_py > $teacher_notebook_py_tagged
 
 jupytext $teacher_notebook_py_tagged --to ipynb --output $teacher_notebook_ipynb_tagged
 echo $student_notebook
