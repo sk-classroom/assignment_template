@@ -5,6 +5,9 @@
 - [ ] Create the teacher notebook with answers
   - Add tag "answer" for the cells with the assignment answers
   - Add tag "gradable" for the cells that are gradable
+- [ ] Write test scripts
+  - Write test scripts (e.g., `test_01.py`) and place them in the `tests` folder
+  - Make sure that the grading works locally by running `bash grading-toolkit/grade_notebook.sh tests/test_01.py for_instructor/assignment_teacher.ipynb answer`
 - [ ] Generate the student version and the encrypted teacher's notebook
   - Run the `to_student_version.sh` script by
   - `bash grading-toolkit/to_student_version.sh assignment_teacher.ipynb assignment/assignment.ipynb mypassword`
@@ -33,6 +36,12 @@
   - [ ] All tests run successfully
 - [ ] Keep the password secret
 
+## How to decrypt the teacher's notebook
+
+```bash
+openssl enc -d -aes256 -pass pass:mypassword -in assignment_teacher.ipynb.enc >assignment_teacher.ipynb
+```
+- Change the password used to encrypt the notebook
 
 ## How to use to_student_version.sh
 
