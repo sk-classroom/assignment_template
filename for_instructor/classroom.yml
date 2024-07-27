@@ -17,7 +17,7 @@ jobs:
     # This is an example of how to grade the assignment
     #
     - name: Test <your test name>
-      id: test-connected-component
+      id: test_A
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Test <your test name>
@@ -28,7 +28,18 @@ jobs:
         #
         # Command is the command to grade the assignment
         #
-        command: bash test/grade_notebook.sh tests/test_01.py assignment/assignment_example.ipynb
+        command: bash grading-toolkit/grade_notebook.sh tests/test_01.py assignment/assignment.ipynb
+        timeout: 10 # Timeout in seconds
+        max-score: 10 # Max score
+    - name: Test <your test name>
+      id: test_B
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test <your test name>
+        #
+        # Command is the command to grade the assignment
+        #
+        command: bash grading-toolkit/grade_notebook.sh tests/test_01.py assignment/assignment.ipynb
         timeout: 10 # Timeout in seconds
         max-score: 10 # Max score
     - name: Autograding Reporter
@@ -36,4 +47,4 @@ jobs:
       env:
         TEST-CONNECTED-COMPONENT_RESULTS: "${{steps.test-connected-component.outputs.result}}"
       with:
-        runners: test-connected-component
+        runners: test_A,test_B
