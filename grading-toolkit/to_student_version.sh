@@ -8,21 +8,10 @@ student_notebook=$2
 encryption_password=$3
 
 teacher_notebook_enc=${teacher_notebook%.ipynb}.ipynb.enc
-teacher_notebook_py=${teacher_notebook%.ipynb}.py
-teacher_notebook_py_tagged=${teacher_notebook%.ipynb}_tagged.py
-teacher_notebook_ipynb_tagged=${teacher_notebook_py_tagged%.py}.ipynb
 
 openssl enc -aes256 -in $teacher_notebook -out $teacher_notebook_enc -pass pass:$encryption_password
 
-jupytext $teacher_notebook --to py
+jupyter nbconvert --to notebook --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='["answer"]' $teacher_notebook --inplace
 
-#sed -e 's/^# \+$/# + tags=["non-grading-item"]/' $teacher_notebook_py > $teacher_notebook_py_tagged
-
-jupytext $teacher_notebook_py_tagged --to ipynb --output $teacher_notebook_ipynb_tagged
-echo $student_notebook
-jupyter nbconvert --to notebook --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='["answer"]' $teacher_notebook_ipynb_tagged  --inplace
-
-mv $teacher_notebook_ipynb_tagged $student_notebook
-
-rm $teacher_notebook_py $teacher_notebook_py_tagged
+cp $teacher_notebook $student_notebook
 
