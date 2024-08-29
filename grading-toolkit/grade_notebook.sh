@@ -22,6 +22,7 @@ jq '.cells |= map(select(.metadata.tags and (.metadata.tags | index("'$cell_tag'
 
 jupytext $ungraded_notebook --to py
 
-cat $ungraded_py $test_python_script | python
-
+cat $ungraded_py $test_python_script > tmp_run.py
+python tmp_run.py || { echo "Assertion error occurred"; exit 1; }
+rm tmp_run.py
 rm $ungraded_notebook $ungraded_py
