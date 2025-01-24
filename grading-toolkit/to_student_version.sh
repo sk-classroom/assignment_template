@@ -13,5 +13,5 @@ openssl enc -aes256 -in $teacher_notebook -out $teacher_notebook_enc -pass pass:
 
 jupyter nbconvert --to notebook --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags='["answer"]' $teacher_notebook --inplace
 
-cp $teacher_notebook $student_notebook
+mv $teacher_notebook $student_notebook
 
