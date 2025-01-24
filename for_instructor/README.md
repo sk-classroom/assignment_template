@@ -13,8 +13,8 @@
   - `bash grading-toolkit/to_student_version.sh for_instructor/assignment_teacher.ipynb assignment/assignment.ipynb mypassword`
   - Change the password to something more secure
 - [ ] Add the encrypted teacher's notebook to the repository
-  - `git rm -f for-instructor/assignment_teacher.ipynb`
-  - `git add for-instructor/assignment_teacher.ipynb.enc & git commit -m "Update assignment" & git push`
+  - `git rm -f for_instructor/assignment_teacher.ipynb`
+  - `git add for_instructor/assignment_teacher.ipynb.enc & git commit -m "Update assignment" & git push`
 - [ ] Set up the auto-grader
   - Open an assignment in Github Classroom
   - Copy & Paste `classroom.yml` and modify it to fit the assignment
