@@ -1,0 +1,60 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Task 1
+      id: task-1
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Task 1
+        setup-command: pip install -r requirements.txt
+        command: bash grading-toolkit/grade_notebook.sh tests/test_01.py assignment/assignment.ipynb
+        timeout: 10
+        max-score: 5
+    - name: Test 2
+      id: test-2
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Test 2
+        setup-command: ''
+        command: bash grading-toolkit/grade_notebook.sh tests/test_02.py assignment/assignment.ipynb
+        timeout: 10
+        max-score: 5
+    - name: Task 3
+      id: task-3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Task 3
+        setup-command: ''
+        command: bash grading-toolkit/grade_notebook.sh tests/test_03.py assignment/assignment.ipynb
+        timeout: 10
+        max-score: 5
+    - name: Task 4
+      id: task-4
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Task 4
+        setup-command: ''
+        command: bash grading-toolkit/grade_notebook.sh tests/test_04.py assignment/assignment.ipynb
+        timeout: 10
+        max-score: 5
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TASK-1_RESULTS: "${{steps.task-1.outputs.result}}"
+        TEST-2_RESULTS: "${{steps.test-2.outputs.result}}"
+        TASK-3_RESULTS: "${{steps.task-3.outputs.result}}"
+        TASK-4_RESULTS: "${{steps.task-4.outputs.result}}"
+      with:
+        runners: task-1,test-2,task-3,task-4
