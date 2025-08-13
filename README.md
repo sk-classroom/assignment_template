@@ -1,8 +1,14 @@
 # Workflow
 
-1. Complete [the assignment notebook](assignment/assignment.ipynb)
-2. Git add, commit, push the notebook. If you are not sure what they are, [here is a guide](https://graphite.dev/guides/git-add-commit-push)
-3. The assignment will be auto-graded, and you can check out the results at [Github Action](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results)
+1. Read the assignment instruction in [assignment/README.md](assignment/README.md)
+2. Complete the assignment notebook (assignment/assignment.py). You have several options to do this:
+  - (Recommended) Run `uv run marimo edit --sandbox assignment/assignment.py` in your terminal
+  - Alternatively,
+    - 1. Open the assignment in Cloud Marimo (Molab)
+    - 2. Fork the notebook and complete the assignment. (You'll need to create an account on MoLab)
+3. Complete [the quiz](assignment/quiz.toml)
+4. Git add, commit, push the notebook. If you are not sure what they are, [here is a guide](https://graphite.dev/guides/git-add-commit-push)
+5. The assignment will be auto-graded, and you can check out the results at [Github Action](https://docs.github.com/en/education/manage-coursework-with-github-classroom/learn-with-github-classroom/view-autograding-results)
 
 
 # Computing environment
@@ -14,7 +20,3 @@ You can use Github Codespaces to complete the assignment. Note that this environ
 ## Local Machine
 
 You can download the repo and work locally on your machine. Using "git clone" is the easiest way to do this.
-
-## Google Colab
-
-You can work on the assignment by uploading the assignment notebook to Google Colab. Note, however, that you  must upload your completed assignment to the Github repository at the original file location for submission.
