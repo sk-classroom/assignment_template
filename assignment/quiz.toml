@@ -1,0 +1,7 @@
+[[questions]]
+question = "The Watts-Strogaz model creates the small-world networks only when the rewiring probability is greater than 0 but less than 1. True/False and describe the reason."
+answer = "The Wattz-Strogaz model in fact cretes a small-world networks when the network size is small. This is because the path length can be short."
+
+[[questions]]
+question = "What is an Euler circuits?"
+answer = "A path that visits every edge exactly once and starts and ends at the same vertex."

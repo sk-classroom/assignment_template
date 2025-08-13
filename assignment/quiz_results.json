@@ -1,0 +1,70 @@
+{
+  "quiz_title": "Quiz",
+  "quiz_model": "google/gemma-3-4b-it",
+  "evaluator_model": "google/gemini-2.5-flash-lite",
+  "total_questions": 2,
+  "valid_questions": 0,
+  "invalid_questions": 2,
+  "system_errors": 0,
+  "student_wins": 0,
+  "llm_wins": 0,
+  "student_success_rate": 0.0,
+  "student_passes": false,
+  "github_classroom_result": "STUDENTS_QUIZ_KEIKO_LOSE",
+  "question_results": [
+    {
+      "question_number": 1,
+      "question": "The Watts-Strogaz model creates the small-world networks only when the rewiring probability is greater than 0 but less than 1. True/False and describe the reason.",
+      "correct_answer": "The Wattz-Strogaz model in fact cretes a small-world networks when the network size is small. This is because the path length can be short.",
+      "llm_answer": "Question rejected during validation",
+      "is_correct": false,
+      "student_wins": false,
+      "evaluation_explanation": "INVALID QUESTION: The student's answer is factually incorrect and does not address the question asked. The context clearly states that the Watts-Strogatz model creates small-world networks for rewiring probabilities between 0 and 1, not based on network size. The answer also incorrectly states that path length is the sole determinant of small-world networks, ignoring the clustering aspect. Specific issues: The provided answer appears to be incorrect or poorly formed; The question does not relate to the provided context materials (small-world networks lecture content)",
+      "evaluation_confidence": "HIGH",
+      "validation": {
+        "valid": false,
+        "issues": [
+          "answer_quality",
+          "context_mismatch"
+        ],
+        "reason": "The student's answer is factually incorrect and does not address the question asked. The context clearly states that the Watts-Strogatz model creates small-world networks for rewiring probabilities between 0 and 1, not based on network size. The answer also incorrectly states that path length is the sole determinant of small-world networks, ignoring the clustering aspect."
+      },
+      "error": "Validation failed: The student's answer is factually incorrect and does not address the question asked. The context clearly states that the Watts-Strogatz model creates small-world networks for rewiring probabilities between 0 and 1, not based on network size. The answer also incorrectly states that path length is the sole determinant of small-world networks, ignoring the clustering aspect. Specific issues: The provided answer appears to be incorrect or poorly formed; The question does not relate to the provided context materials (small-world networks lecture content)"
+    },
+    {
+      "question_number": 2,
+      "question": "What is an Euler circuits?",
+      "correct_answer": "A path that visits every edge exactly once and starts and ends at the same vertex.",
+      "llm_answer": "Question rejected during validation",
+      "is_correct": false,
+      "student_wins": false,
+      "evaluation_explanation": "INVALID QUESTION: The provided context materials discuss small-world networks, path lengths, and clustering coefficients. While the term 'path' is mentioned, 'Euler circuits' are not discussed or defined within the context. Therefore, the question is not relevant to the provided materials. Specific issues: The question does not relate to the provided context materials (small-world networks lecture content)",
+      "evaluation_confidence": "HIGH",
+      "validation": {
+        "valid": false,
+        "issues": [
+          "context_mismatch"
+        ],
+        "reason": "The provided context materials discuss small-world networks, path lengths, and clustering coefficients. While the term 'path' is mentioned, 'Euler circuits' are not discussed or defined within the context. Therefore, the question is not relevant to the provided materials."
+      },
+      "error": "Validation failed: The provided context materials discuss small-world networks, path lengths, and clustering coefficients. While the term 'path' is mentioned, 'Euler circuits' are not discussed or defined within the context. Therefore, the question is not relevant to the provided materials. Specific issues: The question does not relate to the provided context materials (small-world networks lecture content)"
+    }
+  ],
+  "validation_summary": {
+    "total_questions": 2,
+    "valid_questions": 0,
+    "invalid_questions": 2,
+    "validation_rate": 0.0,
+    "common_issues": {
+      "answer_quality": 1,
+      "context_mismatch": 2
+    },
+    "recommendations": [
+      "\ud83d\udcdd Improve answer quality: Ensure answers are accurate and well-formed",
+      "\ud83c\udfaf Align with context: Ensure questions relate to the provided materials",
+      "\ud83d\udca1 Focus on conceptual understanding rather than memorization",
+      "\ud83c\udfaf Create questions that test edge cases and subtle distinctions",
+      "\u2696\ufe0f Ensure answers are complete but concise"
+    ]
+  }
+}
