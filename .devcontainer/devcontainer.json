@@ -1,0 +1,29 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "containerEnv": {
+    "UV_LINK_MODE": "copy"
+  },
+  "waitFor": "onCreateCommand",
+  "onCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+  "updateContentCommand": "bash .devcontainer/setup.sh",
+  "postCreateCommand": "",
+  "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "marimo-team.vscode-marimo"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "./.venv/bin/python",
+        "marimo.pythonPath": "./.venv/bin/python"
+      }
+    }
+  }
+}

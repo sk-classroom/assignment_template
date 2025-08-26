@@ -5,6 +5,12 @@
 - [ ] Write test scripts
   - Write test scripts (e.g., `test_01.py`) and place them in the `tests` folder
 - [ ] Create the teacher notebook with answers in "grading/assignment.py"
+  - [ ] Make sure to import the libraries that will be used in the test function as follows:
+    ```python
+    with app.setup(hide_code=True):
+        import numpy as np
+        ...
+    ```
 - [ ] Test run the teacher notebook by running
   - `uv run tests/test_01.py`  (more tests if needed)
   - `./grading/run_quiz_test.sh --config ./grading/config.toml --quiz-file ./assignment/quiz.toml --api-key ${{ secrets.CHAT_API }} --output ./assignment/quiz_results.json`
@@ -20,13 +26,7 @@
       -out grading/assignment.py.enc \
       -pass env:GITHUB_CLASSROOM_ASSIGNMENT_KEY
     ```
-    - Alternatively (less preferred), if you must pass the value explicitly, always quote it to avoid issues with special characters:
-      ```bash
-      openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000 \
-        -in grading/assignment.py \
-        -out grading/assignment.py.enc \
-        -pass pass:"$GITHUB_CLASSROOM_ASSIGNMENT_KEY"
-      ```
+  - Update the code in Molab
 - [ ] Add the encrypted teacher's notebook to the repository
   - Remove all commit history if needed by following these steps:
     1. Create a fresh orphan branch: `git checkout --orphan latest_branch`
