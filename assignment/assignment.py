@@ -3,6 +3,10 @@ import marimo
 __generated_with = "0.14.16"
 app = marimo.App(width="full", theme="dark")
 
+with app.setup(hide_code=True):
+    # Initialization code that runs before all other cells
+    import numpy as np
+    import igraph
 
 @app.cell(hide_code=True)
 def _(mo):
